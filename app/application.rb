@@ -7,6 +7,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
+
+
     if req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
@@ -19,9 +21,13 @@ class Application
     end
 
     if req.path.match(/add/)
-      @@items.each do |item|
+      GET.param(item)
+      @@items.each do |i|
+        if i == GET.param(item)
         @@cart << item
         resp.write "added #{item}"
+      else
+        resp.write "We don't have that item"
       end
     end
 
