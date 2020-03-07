@@ -20,7 +20,7 @@ class Application
       resp.write "Your cart is empty"
     end
 
-    elsif req.path.match(/add/)
+    if req.path.match(/add/)
       item = getParam(item)
       @@items.each do |i|
         if i == item
