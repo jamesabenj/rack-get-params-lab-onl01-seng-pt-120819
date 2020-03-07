@@ -7,7 +7,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    route("/cart") do 
+    route("/cart") do
       @@cart.each do |item|
         resp.write "#{item}\n"
       end
