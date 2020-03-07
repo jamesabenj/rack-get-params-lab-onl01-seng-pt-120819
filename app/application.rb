@@ -18,6 +18,7 @@ class Application
       resp.write handle_search(search_term)
     else
       resp.write "Your cart is empty"
+    end
 
     elsif req.path.match(/add/)
       item = getParam(item)
