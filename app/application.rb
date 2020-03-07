@@ -18,9 +18,14 @@ class Application
     end
 
     if req.path.match(/add/)
-      @@items.each do |i|
-        @@cart << i
+      search_term = req.params[item]
+      @@items.include?(search_term)
+        if i == search_term
+          @@cart << i
         resp.write "added #{i}"
+        else
+          resp.write "We don't have that item"
+        end
       end
     end
     resp.finish
@@ -33,5 +38,13 @@ class Application
       return "Couldn't find #{search_term}"
     end
   end
+
+  if req.path.match(/add/)
+    search_term = req.params[item]
+    resp.write handle_search(search_term)
+
+    if req.path.match(/search/)
+      search_term = req.params["q"]
+      resp.write handle_search(search_term)
 
 end
