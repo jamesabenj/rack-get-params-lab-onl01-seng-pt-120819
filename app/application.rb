@@ -10,6 +10,7 @@ class Application
     if req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
+      end
     end
     if req.path.match(/search/)
       search_term = req.params["q"]
@@ -34,5 +35,5 @@ class Application
       return "Couldn't find #{search_term}"
     end
   end
-  
+
 end
