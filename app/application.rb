@@ -22,6 +22,7 @@ class Application
       @@items.each do |i|
         @@cart << item
         resp.write "added #{item}"
+      end
     end
     resp.finish
   end
