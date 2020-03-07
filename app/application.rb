@@ -19,12 +19,11 @@ class Application
 
     if req.path.match(/add/)
       search_term = req.params[item]
-        if @@items.include?(search_term)
-          @@cart << i
+      if @@items.include?(search_term)
+        @@cart << i
         resp.write "added #{i}"
-        else
-          resp.write "We don't have that item"
-        end
+      else
+        resp.write "We don't have that item"
       end
     end
     resp.finish
