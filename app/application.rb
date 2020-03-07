@@ -21,9 +21,9 @@ class Application
     end
 
     if req.path.match(/add/)
-      GET.param(item)
+      user_item = GET.param(item)
       @@items.each do |i|
-        if i == GET.param(item)
+        if i == GET.param(user_item)
         @@cart << item
         resp.write "added #{item}"
       else
