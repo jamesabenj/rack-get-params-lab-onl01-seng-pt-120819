@@ -38,12 +38,9 @@ class Application
     end
   end
 
-  if req.path.match(/add/)
-    search_term = req.params[item]
-    resp.write handle_search(search_term)
 
-    if req.path.match(/search/)
-      search_term = req.params["q"]
-      resp.write handle_search(search_term)
+    #if req.path.match(/search/)
+    #  search_term = req.params["q"]
+    #  resp.write handle_search(search_term)
 
 end
