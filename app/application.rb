@@ -19,7 +19,6 @@ class Application
     end
 
     if req.path.match(/add/)
-      item = getParam(item)
       @@items.each do |i|
         @@cart << item
         resp.write "added #{item}"
