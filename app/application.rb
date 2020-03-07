@@ -21,15 +21,12 @@ class Application
     if req.path.match(/add/)
       item = getParam(item)
       @@items.each do |i|
-        if i == item
         @@cart << item
         resp.write "added #{item}"
-        else
-        resp.write "We don't have that item"
-        end
-      end
-    resp.finish
+    else
+      resp.write "We don't have that item"
     end
+    resp.finish
   end
 
   def handle_search(search_term)
