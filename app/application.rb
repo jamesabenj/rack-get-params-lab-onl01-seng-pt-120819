@@ -26,8 +26,9 @@ class Application
         if i == user_item
         @@cart << item
         resp.write "added #{item}"
-      else
+        else
         resp.write "We don't have that item"
+        end
       end
     end
 
