@@ -21,8 +21,8 @@ class Application
 
     if req.path.match(/add/)
       @@items.each do |i|
-        @@cart << item
-        resp.write "added #{item}"
+        @@cart << i
+        resp.write "added #{i}"
       end
     end
     resp.finish
