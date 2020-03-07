@@ -23,8 +23,6 @@ class Application
       @@items.each do |i|
         @@cart << item
         resp.write "added #{item}"
-    else
-      resp.write "We don't have that item"
     end
     resp.finish
   end
