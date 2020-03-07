@@ -29,9 +29,9 @@ class Application
         else
         resp.write "We don't have that item"
         end
-    end
+      end
     resp.finish
-  end
+    end
 
   def handle_search(search_term)
     if @@items.include?(search_term)
