@@ -8,12 +8,13 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/cart/)
-      if !@@cart.empty? 
-      @@cart.each do |item|
+      if !@@cart.empty?
+        @@cart.each do |item|
         resp.write "#{item}\n"
       end
-    else
-      resp.write "Your cart is empty"
+      else
+        resp.write "Your cart is empty"
+      end
     end
 
     if req.path.match(/add/)
