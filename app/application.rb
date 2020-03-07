@@ -23,7 +23,7 @@ class Application
     if req.path.match(/add/)
       user_item = GET.param(item)
       @@items.each do |i|
-        if i == GET.param(user_item)
+        if i == user_item
         @@cart << item
         resp.write "added #{item}"
       else
